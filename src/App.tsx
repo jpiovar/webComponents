@@ -7,7 +7,7 @@ import {
   Content,
   Theme
 } from '@carbon/react';
-import { HomePage, ExamplePage } from './pages';
+import { HomePage, ExamplePage, WebPage } from './pages';
 import './App.scss';
 
 function Navigation() {
@@ -29,6 +29,13 @@ function Navigation() {
       >
         Examples
       </HeaderMenuItem>
+      <HeaderMenuItem
+        as={Link}
+        to="/web-page"
+        isActive={location.pathname === '/web-page'}
+      >
+        Web Components
+      </HeaderMenuItem>
     </HeaderNavigation>
   );
 }
@@ -48,6 +55,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/examples" element={<ExamplePage />} />
+            <Route path="/web-page" element={<WebPage />} />
           </Routes>
         </Content>
       </Theme>

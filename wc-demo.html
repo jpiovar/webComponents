@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Components Demo</title>
+</head>
+
+<body>
+    <div style="padding: 2rem; max-width: 800px; margin: 0 auto;">
+        <h1>Web Components Demo</h1>
+        <p style="margin-bottom: 2rem;">This page uses the shareable Web Components outside of the React app tree.</p>
+
+        <div style="margin-bottom: 3rem;">
+            <h2>&lt;custom-button&gt;</h2>
+            <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem;">
+                <custom-button variant="primary">Primary Button</custom-button>
+                <custom-button variant="secondary">Secondary Button</custom-button>
+                <custom-button variant="tertiary">Tertiary Button</custom-button>
+                <custom-button variant="ghost">Ghost Button</custom-button>
+                <custom-button variant="danger">Danger Button</custom-button>
+            </div>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <custom-button size="sm">Small</custom-button>
+                <custom-button size="md">Medium</custom-button>
+                <custom-button size="lg">Large</custom-button>
+                <custom-button disabled="true">Disabled</custom-button>
+            </div>
+        </div>
+
+        <div>
+            <h2>&lt;custom-input&gt;</h2>
+            <div style="display: flex; flex-direction: column; gap: 1rem; max-width: 400px;">
+                <custom-input id="us-1" label="Username (Web Component)" placeholder="Enter username"
+                    helper-text="This is a standard custom element">
+                </custom-input>
+
+                <custom-input id="pw-1" label="Password" type="password" placeholder="Enter password">
+                </custom-input>
+
+                <custom-input id="err-1" label="Error State" value="Invalid input" error="This field has an error">
+                </custom-input>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/wc-demo.ts"></script>
+    <script>
+        // Test interaction
+        document.querySelector('custom-button[variant="primary"]').addEventListener('click', () => {
+            alert('Custom Button Clicked!');
+        });
+
+        // Test prop update
+        const input = document.getElementById('us-1');
+        input.addEventListener('change', (e) => {
+            console.log('Input changed:', e.target.value);
+        });
+    </script>
+</body>
+
+</html>

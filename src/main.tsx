@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import '@carbon/styles/css/styles.css'
 import './index.scss'
 import App from './App.tsx'
+import './web-components';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
