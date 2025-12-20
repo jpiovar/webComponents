@@ -1,9 +1,24 @@
 import r2wc from '@r2wc/react-to-web-component';
 import { CustomButton } from './components/CustomButton/CustomButton';
 import { CustomInput } from './components/CustomInput/CustomInput';
+import carbonStyles from '@carbon/styles/css/styles.css?inline';
+
+const withCarbonStyles = (Component: React.ComponentType<any>) => {
+    return (props: any) => {
+        return (
+            <>
+            <style>{ carbonStyles } </style>
+            < Component {...props } />
+                </>
+        );
+    };
+};
+
+const WrappedCustomButton = withCarbonStyles(CustomButton);
+const WrappedCustomInput = withCarbonStyles(CustomInput);
 
 // Register <custom-button>
-const CustomButtonWC = r2wc(CustomButton, {
+const CustomButtonWC = r2wc(WrappedCustomButton, {
     props: {
         variant: 'string',
         content: 'string',
@@ -12,13 +27,13 @@ const CustomButtonWC = r2wc(CustomButton, {
         type: 'string',
         iconDescription: 'string',
     },
-    // shadow: "open", // Use Light DOM to inherit Carbon styles
+    shadow: "open",
 });
 
 customElements.define('custom-button', CustomButtonWC);
 
 // Register <custom-input>
-const CustomInputWC = r2wc(CustomInput, {
+const CustomInputWC = r2wc(WrappedCustomInput, {
     props: {
         id: 'string',
         label: 'string',
@@ -28,8 +43,9 @@ const CustomInputWC = r2wc(CustomInput, {
         disabled: 'boolean',
         error: 'string',
         helperText: 'string',
+        required: 'boolean',
     },
-    // shadow: "open", // Light DOM for Carbon styles
+    shadow: "open",
 });
 
 customElements.define('custom-input', CustomInputWC);

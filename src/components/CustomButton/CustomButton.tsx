@@ -4,6 +4,7 @@ import './CustomButton.scss';
 
 interface CustomButtonProps {
     content?: React.ReactNode;
+    children?: React.ReactNode;
     onClick?: () => void;
     variant?: 'primary' | 'secondary' | 'outline' | 'danger';
     size?: 'small' | 'medium' | 'large';
@@ -15,6 +16,7 @@ interface CustomButtonProps {
 
 export const CustomButton: React.FC<CustomButtonProps> = ({
     content,
+    children,
     onClick,
     variant = 'primary',
     size = 'medium',
@@ -41,7 +43,7 @@ export const CustomButton: React.FC<CustomButtonProps> = ({
             iconDescription={iconDescription}
             {...rest}
         >
-                {content}
+            {content || children}
         </Button>
     );
 };

@@ -25,21 +25,29 @@ export const CustomInput: React.FC<CustomInputProps> = ({
     disabled = false,
     error,
     helperText,
+    required,
     ...rest
 }) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (onChange) {
+            onChange(e.target.value);
+        }
+    };
+
     return (
         <TextInput
             id={id}
             labelText={label || ''}
             placeholder={placeholder}
             value={value}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange(e.target.value)}
+            onChange={handleChange}
             type={type}
             disabled={disabled}
             invalid={!!error}
             invalidText={error}
             helperText={helperText}
             className="custom-input"
+            required={required}
             {...rest}
         />
     );
