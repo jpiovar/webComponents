@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import r2wc from '@r2wc/react-to-web-component';
 import { CustomButton } from './components/CustomButton/CustomButton';
 import { CustomInput } from './components/CustomInput/CustomInput';
@@ -6,11 +6,11 @@ import carbonStyles from '@carbon/styles/css/styles.css?inline';
 
 const withCarbonStyles = (Component: React.ComponentType<any>) => {
     return (props: any) => {
-        return React.createElement(
-            React.Fragment,
-            null,
-            React.createElement('style', null, carbonStyles),
-            React.createElement(Component, props)
+        return (
+            <>
+                <style>{carbonStyles}</style>
+                <Component {...props} />
+            </>
         );
     };
 };
@@ -28,7 +28,7 @@ const CustomButtonWC = r2wc(WrappedCustomButton, {
         type: 'string',
         iconDescription: 'string',
     },
-    shadow: "open",
+    shadow: 'open',
 });
 
 customElements.define('custom-button', CustomButtonWC);
@@ -46,7 +46,7 @@ const CustomInputWC = r2wc(WrappedCustomInput, {
         helperText: 'string',
         required: 'boolean',
     },
-    shadow: "open",
+    shadow: 'open',
 });
 
 customElements.define('custom-input', CustomInputWC);
