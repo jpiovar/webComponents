@@ -3,9 +3,9 @@ import { Button } from '@carbon/react';
 import './CustomButton.scss';
 
 interface CustomButtonProps {
-    children: React.ReactNode;
+    content?: React.ReactNode;
     onClick?: () => void;
-    variant?: 'primary' | 'secondary' | 'outline';
+    variant?: 'primary' | 'secondary' | 'outline' | 'danger';
     size?: 'small' | 'medium' | 'large';
     disabled?: boolean;
     type?: 'button' | 'submit' | 'reset';
@@ -14,7 +14,7 @@ interface CustomButtonProps {
 }
 
 export const CustomButton: React.FC<CustomButtonProps> = ({
-    children,
+    content,
     onClick,
     variant = 'primary',
     size = 'medium',
@@ -41,7 +41,7 @@ export const CustomButton: React.FC<CustomButtonProps> = ({
             iconDescription={iconDescription}
             {...rest}
         >
-            {children}
+                {content}
         </Button>
     );
 };

@@ -68,25 +68,22 @@ export default function HomePage() {
                             <CustomButton
                                 variant="primary"
                                 onClick={() => console.log('Custom Primary clicked!')}
-                            >
-                                Custom Primary
-                            </CustomButton>
+                                content="Custom Primary"
+                            />
 
                             <CustomButton
                                 variant="secondary"
                                 size="medium"
                                 onClick={() => console.log('Custom Secondary clicked!')}
-                            >
-                                Custom Secondary
-                            </CustomButton>
+                                content="Custom Secondary"
+                            />
 
                             <CustomButton
                                 variant="outline"
                                 size="small"
                                 onClick={() => console.log('Custom Outline clicked!')}
-                            >
-                                Custom Outline
-                            </CustomButton>
+                                content="Custom Outline"
+                            />
                         </div>
                     </div>
                 </Tile>

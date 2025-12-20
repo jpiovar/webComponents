@@ -6,6 +6,7 @@ import { CustomInput } from './components/CustomInput/CustomInput';
 const CustomButtonWC = r2wc(CustomButton, {
     props: {
         variant: 'string',
+        content: 'string',
         size: 'string',
         disabled: 'boolean',
         type: 'string',

@@ -16,15 +16,15 @@ const WebPage: React.FC = () => {
                 <div style={{ display: 'flex', gap: '1rem', flexDirection: 'column', marginTop: '1rem' }}>
                     <div>
                         <h3>Primary</h3>
-                        <custom-button variant="primary">Primary Button</custom-button>
+                        <custom-button variant="primary" content="Primary Button" />
                     </div>
                     <div>
                         <h3>Secondary</h3>
-                        <custom-button variant="secondary">Secondary Button</custom-button>
+                        <custom-button variant="secondary" content="Secondary Button" />
                     </div>
                     <div>
                         <h3>Danger</h3>
-                        <custom-button variant="danger">Danger Button</custom-button>
+                        <custom-button variant="danger" content="Danger Button" />
                     </div>
                 </div>
             </Column>

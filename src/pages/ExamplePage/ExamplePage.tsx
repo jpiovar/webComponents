@@ -70,8 +70,8 @@ export default function ExamplePage() {
                             <CustomButton
                                 variant="primary"
                                 type="submit"
+                                content="Submit Form"
                             >
-                                Submit Form
                             </CustomButton>
                         </Stack>
                     </Form>
@@ -85,39 +85,25 @@ export default function ExamplePage() {
                         <div>
                             <h4 className="variation-title">Sizes</h4>
                             <Stack gap={3}>
-                                <CustomButton variant="primary" size="small">
-                                    Small Button
-                                </CustomButton>
-                                <CustomButton variant="primary" size="medium">
-                                    Medium Button
-                                </CustomButton>
-                                <CustomButton variant="primary" size="large">
-                                    Large Button
-                                </CustomButton>
+                                <CustomButton variant="primary" size="small" content="Small Button" />
+                                <CustomButton variant="primary" size="medium" content="Medium Button" />
+                                <CustomButton variant="primary" size="large" content="Large Button" />
                             </Stack>
                         </div>
 
                         <div>
                             <h4 className="variation-title">Variants</h4>
                             <Stack gap={3}>
-                                <CustomButton variant="primary">
-                                    Primary
-                                </CustomButton>
-                                <CustomButton variant="secondary">
-                                    Secondary
-                                </CustomButton>
-                                <CustomButton variant="outline">
-                                    Outline
-                                </CustomButton>
+                                <CustomButton variant="primary" content="Primary" />
+                                <CustomButton variant="secondary" content="Secondary" />
+                                <CustomButton variant="outline" content="Outline" />
                             </Stack>
                         </div>
 
                         <div>
                             <h4 className="variation-title">States</h4>
                             <Stack gap={3}>
-                                <CustomButton variant="primary" disabled>
-                                    Disabled Button
-                                </CustomButton>
+                                <CustomButton variant="primary" disabled content="Disabled Button" />
                             </Stack>
                         </div>
                     </Stack>

@@ -5,6 +5,7 @@ declare global {
         interface IntrinsicElements {
             "custom-button": React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
                 variant?: string;
+                content?: string;
                 size?: string;
                 disabled?: boolean;
                 type?: string;
