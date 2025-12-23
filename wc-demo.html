@@ -11,7 +11,17 @@
 <body>
     <div style="padding: 2rem; max-width: 800px; margin: 0 auto;">
         <h1>Web Components Demo</h1>
-        <p style="margin-bottom: 2rem;">This page uses the shareable Web Components outside of the React app tree.</p>
+        <p style="margin-bottom: 1rem;">This page uses the shareable Web Components outside of the React app tree.</p>
+
+        <div
+            style="background: #f4f4f4; padding: 1rem; border-radius: 4px; margin-bottom: 2rem; border-left: 4px solid #0f62fe;">
+            <p style="margin: 0; font-weight: bold;">How to use these in your project:</p>
+            <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">1. Run <code>npm run build:wc</code></p>
+            <p style="margin: 0.2rem 0 0 0; font-size: 0.9rem;">2. Include
+                <code>&lt;script src="dist/wc/web-components.umd.cjs"&gt;&lt;/script&gt;</code></p>
+            <p style="margin: 0.2rem 0 0 0; font-size: 0.9rem;">3. Use the tags: <code>&lt;custom-button&gt;</code>,
+                <code>&lt;custom-input&gt;</code></p>
+        </div>
 
         <div style="margin-bottom: 3rem;">
             <h2>&lt;custom-button&gt;</h2>

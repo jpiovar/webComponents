@@ -1,2 +1,2 @@
 import './index.scss'; // Import global Carbon styles
-import './web-components'; // Register Web Components
+import './web-components.tsx'; // Register Web Components
