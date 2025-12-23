@@ -18,25 +18,27 @@
             <p style="margin: 0; font-weight: bold;">How to use these in your project:</p>
             <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">1. Run <code>npm run build:wc</code></p>
             <p style="margin: 0.2rem 0 0 0; font-size: 0.9rem;">2. Include
-                <code>&lt;script src="dist/wc/web-components.umd.cjs"&gt;&lt;/script&gt;</code></p>
+                <code>&lt;script src="dist/wc/web-components.umd.cjs"&gt;&lt;/script&gt;</code>
+            </p>
             <p style="margin: 0.2rem 0 0 0; font-size: 0.9rem;">3. Use the tags: <code>&lt;custom-button&gt;</code>,
-                <code>&lt;custom-input&gt;</code></p>
+                <code>&lt;custom-input&gt;</code>
+            </p>
         </div>
 
         <div style="margin-bottom: 3rem;">
             <h2>&lt;custom-button&gt;</h2>
             <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem;">
-                <custom-button variant="primary">Primary Button</custom-button>
-                <custom-button variant="secondary">Secondary Button</custom-button>
-                <custom-button variant="tertiary">Tertiary Button</custom-button>
-                <custom-button variant="ghost">Ghost Button</custom-button>
-                <custom-button variant="danger">Danger Button</custom-button>
+                <custom-button variant="primary" content="Primary Button"></custom-button>
+                <custom-button variant="secondary" content="Secondary Button"></custom-button>
+                <custom-button variant="tertiary" content="Tertiary Button"></custom-button>
+                <custom-button variant="ghost" content="Ghost Button"></custom-button>
+                <custom-button variant="danger" content="Danger Button"></custom-button>
             </div>
             <div style="display: flex; gap: 1rem; align-items: center;">
-                <custom-button size="sm">Small</custom-button>
-                <custom-button size="md">Medium</custom-button>
-                <custom-button size="lg">Large</custom-button>
-                <custom-button disabled="true">Disabled</custom-button>
+                <custom-button size="sm" content="Small"></custom-button>
+                <custom-button size="md" content="Medium"></custom-button>
+                <custom-button size="lg" content="Large"></custom-button>
+                <custom-button disabled="true" content="Disabled"></custom-button>
             </div>
         </div>
 
