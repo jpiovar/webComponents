@@ -2,6 +2,7 @@ import React from 'react';
 import r2wc from '@r2wc/react-to-web-component';
 import { CustomButton } from './components/CustomButton/CustomButton';
 import { CustomInput } from './components/CustomInput/CustomInput';
+// @ts-ignore: CSS inline import has no type declarations
 import carbonStyles from '@carbon/styles/css/styles.css?inline';
 
 const withCarbonStyles = (Component: React.ComponentType<any>) => {
