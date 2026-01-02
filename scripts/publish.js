@@ -1,5 +1,5 @@
 import { execSync } from "node:child_process"
-import { copyFileSync, readFileSync, writeFileSync } from "node:fs"
+import { copyFileSync, readFileSync, writeFileSync, existsSync } from "node:fs"
 import path from "node:path"
 
 const releaseType = process.argv[2] || "patch" // patch | minor | major
@@ -22,14 +22,29 @@ const npmTemplate = JSON.parse(
 
 npmTemplate.version = rootPkg.version
 
+// pridáme typy do package.json
+npmTemplate.types = "./types/index.d.ts"
+
 writeFileSync(
   npmPkgPath,
   JSON.stringify(npmTemplate, null, 2)
 )
 
-// 4️⃣ publish
+// 4️⃣ generate TypeScript declaration files using tsconfig.build.json
+console.log("🔹 Generating TypeScript types...")
+execSync("tsc --project tsconfig.build.json", {
+  stdio: "inherit",
+})
+
+if (!existsSync("dist/types")) {
+  throw new Error("TypeScript declarations not generated!")
+}
+
+// 5️⃣ publish
+console.log("🔹 Publishing to npm...")
 execSync("npm publish --access public", {
   cwd: "dist",
   stdio: "inherit",
 })
 
+console.log("✅ Publish complete!")

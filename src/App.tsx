@@ -10,6 +10,7 @@ import {
 import { HomePage, ExamplePage, WebPage } from './pages';
 import './App.scss';
 
+
 function Navigation() {
   const location = useLocation();
 

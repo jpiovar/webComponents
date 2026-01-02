@@ -1,11 +1,12 @@
 {
   "name": "webcomponents",
   "private": true,
-  "version": "2.1.1",
+  "version": "2.1.6",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && npm run build:types",
+    "build:types": "tsc -p tsconfig.build.json",
     "build:wc": "vite build --config vite.wc.config.ts",
     "release:patch": "npm run build:wc && node scripts/publish.js patch",
     "release:minor": "npm run build:wc && node scripts/publish.js minor",
@@ -21,6 +22,7 @@
   "dependencies": {
     "@carbon/react": "^1.97.0",
     "@carbon/styles": "^1.96.0",
+    "@plantandgo/web-components": "file:dist",
     "@r2wc/react-to-web-component": "^2.1.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
@@ -43,6 +45,7 @@
     "stylelint-scss": "^6.13.0",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
-    "vite": "^7.2.4"
+    "vite": "^7.2.4",
+    "vite-plugin-dts": "^4.5.4"
   }
 }

@@ -54,7 +54,7 @@ const WrappedCustomButton = withCarbonStyles(CustomButton);
 const WrappedCustomInput = withCarbonStyles(CustomInput);
 
 // Register <custom-button>
-const CustomButtonWC = r2wc(WrappedCustomButton, {
+export const CustomButtonWC = r2wc(WrappedCustomButton, {
     props: {
         variant: 'string',
         content: 'string',
@@ -68,7 +68,7 @@ const CustomButtonWC = r2wc(WrappedCustomButton, {
 customElements.define('custom-button', CustomButtonWC);
 
 // Register <custom-input>
-const CustomInputWC = r2wc(WrappedCustomInput, {
+export const CustomInputWC = r2wc(WrappedCustomInput, {
     props: {
         id: 'string',
         label: 'string',

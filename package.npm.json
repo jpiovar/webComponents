@@ -1,8 +1,10 @@
 {
   "name": "@plantandgo/web-components",
   "version": "1.0.0",
+  "type": "module",
   "main": "./web-components.umd.js",
   "module": "./web-components.es.js",
+  "types": "./types/index.d.ts",
   "exports": {
     ".": {
       "import": "./web-components.es.js",
