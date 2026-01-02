@@ -11,13 +11,29 @@ export default defineConfig({
 		lib: {
 			entry: resolve(__dirname, 'src/web-components.tsx'),
 			name: 'WebComponents',
-			fileName: 'web-components',
 			formats: ['es', 'umd'],
+			// fileName: (format) => `web-components.${format}.js`,
 		},
 		outDir: 'dist/wc',
 		rollupOptions: {
 			// We bundle React to make it a standalone drop-in.
 			external: [],
+			output: [
+        {
+          format: 'es',
+          entryFileNames: 'web-components.es.js',
+        },
+        {
+          format: 'umd',
+          name: 'WebComponents',
+          entryFileNames: 'web-components.umd.js',
+        },
+        {
+          format: 'umd',
+          name: 'WebComponents',
+          entryFileNames: 'web-components.js', // ← alias
+        },
+      ],
 		},
 	},
 	css: {

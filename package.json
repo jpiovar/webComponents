@@ -1,12 +1,16 @@
 {
   "name": "webcomponents",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "build:wc": "vite build --config vite.wc.config.ts",
+    "release:patch": "npm run build:wc && node scripts/publish.js patch",
+    "release:minor": "npm run build:wc && node scripts/publish.js minor",
+    "release:major": "npm run build:wc && node scripts/publish.js major",
+    "publish:npm": "npm run release:patch",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "lint:style": "stylelint \"**/*.{css,scss}\"",

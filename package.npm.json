@@ -1,0 +1,12 @@
+{
+  "name": "@plantandgo/web-components",
+  "version": "1.0.0",
+  "main": "./web-components.umd.js",
+  "module": "./web-components.es.js",
+  "exports": {
+    ".": {
+      "import": "./web-components.es.js",
+      "require": "./web-components.umd.js"
+    }
+  }
+}
