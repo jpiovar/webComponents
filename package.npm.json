@@ -11,5 +11,9 @@
       "require": "./wc/web-components.umd.js",
       "types": "./types/index.d.ts"
     }
-  }
+  },
+  "sideEffects": [
+    "./wc/web-components.es.js",
+    "./wc/web-components.umd.js"
+  ]
 }
